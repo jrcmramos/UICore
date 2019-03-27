@@ -26,7 +26,7 @@ public extension CustomizableNavigationController {
         }
     }
     
-    public func configureNavigationController(preferLargeTitles: Bool = true) {
+    func configureNavigationController(preferLargeTitles: Bool = true) {
         guard let navigationBar = self.navigationController?.navigationBar else {
             return
         }
@@ -37,10 +37,10 @@ public extension CustomizableNavigationController {
         navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationBar.shadowImage = UIImage()
         // Set navigation bar title text colour
-        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
     }
     
-    public func configureSearchController() {
+    func configureSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         self.navigationItem.searchController = searchController
     }

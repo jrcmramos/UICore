@@ -15,15 +15,15 @@ public protocol NIBLoadable where Self: UIView {
 
 public extension NIBLoadable {
     
-    public static var nibName: String {
+    static var nibName: String {
         return String(describing: Self.self).components(separatedBy: ".").last!
     }
     
-    public static var nib: UINib {
+    static var nib: UINib {
         return UINib(nibName: self.nibName, bundle: Bundle(for: Self.self))
     }
     
-    public static func selfFromNib(withOwner owner: AnyObject? = nil) -> Self {
+    static func selfFromNib(withOwner owner: AnyObject? = nil) -> Self {
         guard let topLevelObjects =  Bundle(for: Self.self).loadNibNamed(self.nibName, owner: owner, options: nil) else {
             fatalError("Could not load NIBLoadable from NIB \(nibName)")
         }
