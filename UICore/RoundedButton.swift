@@ -11,9 +11,10 @@ import UIKit
 @IBDesignable
 public final class RoundedButton: UIButton {
     
-    public var cornerRadius: CGFloat = 15.0 {
+    public var cornerRadius: CGFloat = 5.0 {
         didSet {
-            self.setNeedsDisplay()
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
         }
     }
     
@@ -31,8 +32,8 @@ public final class RoundedButton: UIButton {
         self.clipsToBounds = true
     }
     
-    override public func draw(_ rect: CGRect) {
-        super.draw(rect)
+    public override func layoutSubviews() {
+        super.layoutSubviews()
         
         self.layer.cornerRadius = self.cornerRadius
     }

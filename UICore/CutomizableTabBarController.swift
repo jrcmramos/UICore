@@ -14,10 +14,9 @@ public extension CustomizableTabBarController {
     
     func configureTabBar(image: UIImage, selectedImage: UIImage) {
         let tabBarItem = UITabBarItem(title: nil,
-                                      image: image.withRenderingMode(.alwaysOriginal),
-                                      selectedImage: selectedImage.withRenderingMode(.alwaysOriginal))
+                                      image: image,
+                                      selectedImage: selectedImage)
         tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-        tabBarItem.title = nil
         self.tabBarItem = tabBarItem
     }
 }
