@@ -37,7 +37,7 @@ public extension CustomizableNavigationController {
         navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationBar.shadowImage = UIImage()
         // Set navigation bar title text colour
-        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.label]
     }
     
     func configureSearchController() {
